@@ -33,7 +33,9 @@
 let intervalID
  const stratCng =  function changeColor(){
 
-      intervalID =  setInterval(changeColor,1000)
+      if(!intervalID){
+        intervalID =  setInterval(changeColor,1000)
+      }
         function changeColor(){
             document.body.style.background= randColor();
             // console.log(randColor())
@@ -44,7 +46,7 @@ let intervalID
 
     const stopCng = function(){
         clearInterval(intervalID);
-   
+        intervalID = null;          
     }
 
 
